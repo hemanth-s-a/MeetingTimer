@@ -1,0 +1,60 @@
+<!--
+Meeting Timer
+A page to display a list of talks in a meeting with the ability to add new talks.
+The user can start any talk and end it as required.
+The talk automatically ends when the time runs out.
+All completed tasks are displayed as well.
+An appropriate colour is displayed based on the time remaining for the talk:
+white: more than 30% time left
+green: less than 30% and more than 15% time left
+yellow: less than 15% time left, but the time left is not 0
+red: time has run out! 0!
+-->
+
+<html>
+<head>
+	<title>Meeting Agenda Timer</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="scripts.js"></script>
+</head>
+<body>
+	<h1>Meeting Agenda Timer</h1>
+	<hr /><br />
+	
+	<table class="talk_table" id="list_of_talks">
+		<tr class="talk_table">
+			<th class="talk_table">Talk Title</th>
+			<th class="talk_table">Time Limit</th>
+			<th class="talk_table"></th>
+		</tr>
+	</table>
+	<hr /><br />
+	
+	<table>
+		<tr><td>Title of the Talk:</td><td><input type="text" id="talk_title"></td>
+			<td id="invalid_title" style="visibility:hidden;color:red;">Title can't be empty.</td>
+		</tr>
+		<tr><td>Time Limit:</td><td><input type="text" id="talk_time"></td>
+			<td id="invalid_time" style="visibility:hidden;color:red;">Please enter a valid time in seconds.</td>
+		</tr>
+	</table>
+	<button id="add_talk" onclick="addTalk()">Add a new talk</button>
+	<hr /><br />
+	
+	<div id="talk_in_progress" style="visibility:hidden;">
+		<h2>Talk in progress: <p id="talk_name"></p></h2>
+		<table class="talk_table" id="time_left">
+			<tr><td></td><td>seconds left</td><td><button onclick="finishTalk()">End Talk</td></tr>
+		</table>
+		<hr />
+	</div>
+	
+	<br />
+	<table class="talk_table" id="list_of_completed_talks">
+		<tr class="talk_table">
+			<th class="talk_table">Completed Talks</th>
+		</tr>
+	</table>
+	
+</body>
+</html>

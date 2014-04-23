@@ -1,0 +1,17 @@
+h1 {
+text-align: center;
+}
+
+.talk_table {
+border: 1px solid black;
+text-align: center;
+}
+
+td, th {
+padding: 0px 5px;
+}
+
+#time_left {
+border: 1px solid black;
+text-align: center;
+}
